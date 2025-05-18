@@ -9,13 +9,12 @@ def main():
     
     # Load model and processor from local paths
     pretrained_model_path = "models/paligemma-3b-pt-224"
-    finetuned_model_path = "finetuned_paligemma_riscm_small"
     
     print("Loading processor...")
     processor = AutoProcessor.from_pretrained(pretrained_model_path)
     
     print("Loading model...")
-    model = PaliGemmaForConditionalGeneration.from_pretrained(finetuned_model_path)
+    model = PaliGemmaForConditionalGeneration.from_pretrained(pretrained_model_path)
     
     # Example inference
     def generate_caption(image_path):

@@ -1,0 +1,11 @@
+models
+finetuned_paligemma_riscm_small
+models/paligemma-3b-pt-224
+__pycache__
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.ico
