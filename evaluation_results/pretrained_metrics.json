@@ -1,0 +1,35 @@
+{
+    "model_name": "pretrained",
+    "metrics": {
+        "bleu": 0.012185454584694977,
+        "meteor": 0.09636197518360065,
+        "cider": 0.3209508710468011
+    },
+    "examples": [
+        {
+            "image_path": "example_1.jpg",
+            "generated_caption": "image may contain transportation vehicle aircraft airplane airport and airfield",
+            "reference_caption": "A plane with the red mark and a white plane parked next to boarding bridges of the terminal ."
+        },
+        {
+            "image_path": "example_2.jpg",
+            "generated_caption": "street view",
+            "reference_caption": "There is a long red and green tennis court in the picture ."
+        },
+        {
+            "image_path": "example_3.jpg",
+            "generated_caption": "image may contain outdoors nature land and water",
+            "reference_caption": "the looming river is across the airtight forest ."
+        },
+        {
+            "image_path": "example_4.jpg",
+            "generated_caption": "satellite image of icebergs in the southern ocean off the west coast of the antarctic peninsula",
+            "reference_caption": "Some ice hummocks and some small pieces of ice sea float in the deep blue sea ."
+        },
+        {
+            "image_path": "example_5.jpg",
+            "generated_caption": "what is the name of this building",
+            "reference_caption": "The church with a green hexagon tower and the rest of the church has a gray sloping roof ."
+        }
+    ]
+}

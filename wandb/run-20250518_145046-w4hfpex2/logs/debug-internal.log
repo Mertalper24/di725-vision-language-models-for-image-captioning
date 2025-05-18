@@ -1,0 +1,17 @@
+{"time":"2025-05-18T14:50:46.7835458+03:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-18T14:50:46.7835458+03:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\Mert\\Desktop\\di725-vision-language-models-for-image-captioning\\wandb\\run-20250518_145046-w4hfpex2\\logs\\debug-core.log"}
+{"time":"2025-05-18T14:50:46.9247201+03:00","level":"INFO","msg":"created new stream","id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:46.9247201+03:00","level":"INFO","msg":"stream: started","id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:46.9247201+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:46.9247201+03:00","level":"INFO","msg":"sender: started","stream_id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:46.9247201+03:00","level":"INFO","msg":"handler: started","stream_id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:47.2982674+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-18T14:50:47.974974+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-18T14:50:47.975488+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-18T14:50:48.9867012+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-w4hfpex2-comparison_with_baseline","runtime_seconds":1.175156},{"desc":"uploading artifact run-w4hfpex2-examples","runtime_seconds":1.027106,"subtasks":[{"desc":"examples.table.json","runtime_seconds":0.2065948,"progress":"1.1KB/1.1KB"}]}],"total_operations":2}}
+{"time":"2025-05-18T14:50:50.4480951+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-18T14:50:51.7399403+03:00","level":"INFO","msg":"stream: closing","id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:51.7399403+03:00","level":"INFO","msg":"handler: closed","stream_id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:51.7399403+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:51.7399403+03:00","level":"INFO","msg":"sender: closed","stream_id":"w4hfpex2"}
+{"time":"2025-05-18T14:50:51.7399403+03:00","level":"INFO","msg":"stream: closed","id":"w4hfpex2"}

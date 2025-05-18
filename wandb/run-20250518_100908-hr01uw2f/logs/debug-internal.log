@@ -1,0 +1,17 @@
+{"time":"2025-05-18T10:09:08.5187342+03:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-18T10:09:08.5187342+03:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\Mert\\Desktop\\di725-vision-language-models-for-image-captioning\\wandb\\run-20250518_100908-hr01uw2f\\logs\\debug-core.log"}
+{"time":"2025-05-18T10:09:08.6718495+03:00","level":"INFO","msg":"created new stream","id":"hr01uw2f"}
+{"time":"2025-05-18T10:09:08.6718495+03:00","level":"INFO","msg":"stream: started","id":"hr01uw2f"}
+{"time":"2025-05-18T10:09:08.6718495+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"hr01uw2f"}
+{"time":"2025-05-18T10:09:08.6718495+03:00","level":"INFO","msg":"handler: started","stream_id":"hr01uw2f"}
+{"time":"2025-05-18T10:09:08.6718495+03:00","level":"INFO","msg":"sender: started","stream_id":"hr01uw2f"}
+{"time":"2025-05-18T10:09:09.0840019+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-18T10:32:28.0803878+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-18T10:32:28.0879266+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-18T10:32:28.9315651+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-18T10:32:29.0894093+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 11-12, summary, console lines 12-12","runtime_seconds":0.1578442}],"total_operations":1}}
+{"time":"2025-05-18T10:32:30.5429211+03:00","level":"INFO","msg":"stream: closing","id":"hr01uw2f"}
+{"time":"2025-05-18T10:32:30.5429211+03:00","level":"INFO","msg":"handler: closed","stream_id":"hr01uw2f"}
+{"time":"2025-05-18T10:32:30.5429211+03:00","level":"INFO","msg":"sender: closed","stream_id":"hr01uw2f"}
+{"time":"2025-05-18T10:32:30.5434424+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hr01uw2f"}
+{"time":"2025-05-18T10:32:30.5435945+03:00","level":"INFO","msg":"stream: closed","id":"hr01uw2f"}

@@ -1,0 +1,30 @@
+_wandb:
+    value:
+        cli_version: 0.19.1
+        m: []
+        python_version: 3.9.13
+        t:
+            "1":
+                - 55
+                - 105
+            "2":
+                - 55
+                - 105
+            "3":
+                - 2
+                - 13
+                - 15
+                - 16
+                - 23
+                - 55
+            "4": 3.9.13
+            "5": 0.19.1
+            "8":
+                - 3
+                - 5
+            "12": 0.19.1
+            "13": windows-amd64
+evaluation_date:
+    value: "2025-05-18 14:50:41"
+model_name:
+    value: finetuned_20250518_122415

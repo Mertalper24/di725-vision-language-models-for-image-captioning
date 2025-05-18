@@ -1,0 +1,17 @@
+{"time":"2025-05-18T12:00:12.3718358+03:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-18T12:00:12.3723568+03:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\Mert\\Desktop\\di725-vision-language-models-for-image-captioning\\wandb\\run-20250518_120012-gc366azu\\logs\\debug-core.log"}
+{"time":"2025-05-18T12:00:12.5168291+03:00","level":"INFO","msg":"created new stream","id":"gc366azu"}
+{"time":"2025-05-18T12:00:12.5168291+03:00","level":"INFO","msg":"stream: started","id":"gc366azu"}
+{"time":"2025-05-18T12:00:12.5168291+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"gc366azu"}
+{"time":"2025-05-18T12:00:12.5168291+03:00","level":"INFO","msg":"sender: started","stream_id":"gc366azu"}
+{"time":"2025-05-18T12:00:12.5168291+03:00","level":"INFO","msg":"handler: started","stream_id":"gc366azu"}
+{"time":"2025-05-18T12:00:12.8578078+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-18T12:20:38.9482295+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-18T12:20:38.9527058+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-18T12:20:39.9062019+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-18T12:20:39.9561442+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 11-12, summary, console lines 12-12","runtime_seconds":0.0485908}],"total_operations":1}}
+{"time":"2025-05-18T12:20:41.6363516+03:00","level":"INFO","msg":"stream: closing","id":"gc366azu"}
+{"time":"2025-05-18T12:20:41.6363516+03:00","level":"INFO","msg":"handler: closed","stream_id":"gc366azu"}
+{"time":"2025-05-18T12:20:41.6363516+03:00","level":"INFO","msg":"sender: closed","stream_id":"gc366azu"}
+{"time":"2025-05-18T12:20:41.6363516+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gc366azu"}
+{"time":"2025-05-18T12:20:41.6369589+03:00","level":"INFO","msg":"stream: closed","id":"gc366azu"}

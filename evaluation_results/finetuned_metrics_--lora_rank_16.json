@@ -1,0 +1,35 @@
+{
+    "model_name": "finetuned_20250518_115210",
+    "metrics": {
+        "bleu": 0.024153513202202583,
+        "meteor": 0.15103181084376843,
+        "cider": 0.3974496148380594
+    },
+    "examples": [
+        {
+            "image_path": "example_1.jpg",
+            "generated_caption": "intersection",
+            "reference_caption": "An intersection with sparse traffic located in a residential area with some trees ."
+        },
+        {
+            "image_path": "example_2.jpg",
+            "generated_caption": "dark green marble",
+            "reference_caption": "There are small creeks in the middle of this wetland ."
+        },
+        {
+            "image_path": "example_3.jpg",
+            "generated_caption": "image may contain landscape outdoors nature scenery road aerial view urban town building and city",
+            "reference_caption": "blue, red and orange buildings are on the side of the road ."
+        },
+        {
+            "image_path": "example_4.jpg",
+            "generated_caption": "satellite view of the area",
+            "reference_caption": "There are several scattered trees in the middle of this wetland ."
+        },
+        {
+            "image_path": "example_5.jpg",
+            "generated_caption": "street view",
+            "reference_caption": "Two basketball courts surrounded by some trees and a road beside ."
+        }
+    ]
+}

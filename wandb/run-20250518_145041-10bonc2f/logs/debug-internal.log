@@ -1,0 +1,17 @@
+{"time":"2025-05-18T14:50:41.7052156+03:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-18T14:50:41.7052156+03:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\Mert\\Desktop\\di725-vision-language-models-for-image-captioning\\wandb\\run-20250518_145041-10bonc2f\\logs\\debug-core.log"}
+{"time":"2025-05-18T14:50:41.8427117+03:00","level":"INFO","msg":"created new stream","id":"10bonc2f"}
+{"time":"2025-05-18T14:50:41.8427755+03:00","level":"INFO","msg":"stream: started","id":"10bonc2f"}
+{"time":"2025-05-18T14:50:41.8427755+03:00","level":"INFO","msg":"handler: started","stream_id":"10bonc2f"}
+{"time":"2025-05-18T14:50:41.8427755+03:00","level":"INFO","msg":"sender: started","stream_id":"10bonc2f"}
+{"time":"2025-05-18T14:50:41.8427755+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"10bonc2f"}
+{"time":"2025-05-18T14:50:42.1738317+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-18T14:50:42.8811704+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-18T14:50:42.8813475+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-18T14:50:43.8831545+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-10bonc2f-comparison_with_baseline","runtime_seconds":1.0721109},{"desc":"uploading artifact run-10bonc2f-examples","runtime_seconds":1.0218334,"subtasks":[{"desc":"examples.table.json","runtime_seconds":0.1991405,"progress":"1.6KB/1.6KB"}]}],"total_operations":2}}
+{"time":"2025-05-18T14:50:45.4701273+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-18T14:50:46.7765697+03:00","level":"INFO","msg":"stream: closing","id":"10bonc2f"}
+{"time":"2025-05-18T14:50:46.7765697+03:00","level":"INFO","msg":"handler: closed","stream_id":"10bonc2f"}
+{"time":"2025-05-18T14:50:46.7765697+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"10bonc2f"}
+{"time":"2025-05-18T14:50:46.7765697+03:00","level":"INFO","msg":"sender: closed","stream_id":"10bonc2f"}
+{"time":"2025-05-18T14:50:46.7765697+03:00","level":"INFO","msg":"stream: closed","id":"10bonc2f"}

@@ -1,0 +1,17 @@
+{"time":"2025-05-18T14:50:36.5981793+03:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-18T14:50:36.5981793+03:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\Mert\\Desktop\\di725-vision-language-models-for-image-captioning\\wandb\\run-20250518_145036-a0kf9m0c\\logs\\debug-core.log"}
+{"time":"2025-05-18T14:50:36.7360973+03:00","level":"INFO","msg":"created new stream","id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:36.7360973+03:00","level":"INFO","msg":"stream: started","id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:36.7360973+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:36.7360973+03:00","level":"INFO","msg":"sender: started","stream_id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:36.7366121+03:00","level":"INFO","msg":"handler: started","stream_id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:37.1009515+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-18T14:50:37.7757269+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-18T14:50:37.7760215+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-18T14:50:38.7873361+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-a0kf9m0c-comparison_with_baseline","runtime_seconds":1.1062871,"subtasks":[{"desc":"comparison_with_baseline.table.json","runtime_seconds":0.2861491,"progress":"748B/748B"}]},{"desc":"uploading artifact run-a0kf9m0c-examples","runtime_seconds":1.0357878,"subtasks":[{"desc":"examples.table.json","runtime_seconds":0.2334609,"progress":"1.3KB/1.3KB"}]}],"total_operations":2}}
+{"time":"2025-05-18T14:50:40.3705319+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-18T14:50:41.6994602+03:00","level":"INFO","msg":"stream: closing","id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:41.6994602+03:00","level":"INFO","msg":"handler: closed","stream_id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:41.6994602+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:41.6997962+03:00","level":"INFO","msg":"sender: closed","stream_id":"a0kf9m0c"}
+{"time":"2025-05-18T14:50:41.6998735+03:00","level":"INFO","msg":"stream: closed","id":"a0kf9m0c"}

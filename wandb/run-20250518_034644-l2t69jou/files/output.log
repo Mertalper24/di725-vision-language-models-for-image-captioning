@@ -1,0 +1,41 @@
+`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+`config.hidden_activation` if you want to override this behaviour.
+See https://github.com/huggingface/transformers/pull/29402 for more details.
+Loading checkpoint shards: 100%|██████████████████████████████████| 3/3 [00:00<00:00,  7.98it/s]
+Traceback (most recent call last):
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 147, in <module>
+    main()
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 92, in main
+    train_dataset = load_data("data/train.csv")
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 14, in load_data
+    df = pd.read_csv(data_path)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'data/train.csv'
+Traceback (most recent call last):
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 147, in <module>
+    main()
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 92, in main
+    train_dataset = load_data("data/train.csv")
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 14, in load_data
+    df = pd.read_csv(data_path)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'data/train.csv'

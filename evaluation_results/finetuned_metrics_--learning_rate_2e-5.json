@@ -1,0 +1,35 @@
+{
+    "model_name": "finetuned_20250518_080145",
+    "metrics": {
+        "bleu": 0.022543711362630996,
+        "meteor": 0.19286650502238942,
+        "cider": 0.4805696761972003
+    },
+    "examples": [
+        {
+            "image_path": "example_1.jpg",
+            "generated_caption": "seamless texture 3d model preview no 1",
+            "reference_caption": "a large area of tall trees was planted on the land ."
+        },
+        {
+            "image_path": "example_2.jpg",
+            "generated_caption": "golf course",
+            "reference_caption": "The golf course has a fairway, Some barrier trees and three sandpits and some barrier trees are on both sides of the fairway ."
+        },
+        {
+            "image_path": "example_3.jpg",
+            "generated_caption": "aerial view of the river wye",
+            "reference_caption": "a long river flows through the farmland ."
+        },
+        {
+            "image_path": "example_4.jpg",
+            "generated_caption": "what is the name of this place",
+            "reference_caption": "There are five storage tanks on the side of the white house ."
+        },
+        {
+            "image_path": "example_5.jpg",
+            "generated_caption": "parking lot",
+            "reference_caption": "many cars are parked in a parking lot ."
+        }
+    ]
+}

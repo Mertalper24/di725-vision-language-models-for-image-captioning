@@ -1,0 +1,1 @@
+{"columns": ["Metric", "Baseline", "Fine-tuned", "Improvement"], "data": [["BLEU", "0.0122", "0.0178", "+46.39%"], ["METEOR", "0.0964", "0.1452", "+50.67%"], ["CIDER", "0.3210", "0.4795", "+49.41%"]]}

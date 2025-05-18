@@ -1,0 +1,17 @@
+{"time":"2025-05-18T14:07:13.9870289+03:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2025-05-18T14:07:13.9870289+03:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\Mert\\Desktop\\di725-vision-language-models-for-image-captioning\\wandb\\run-20250518_140713-3h8bgr3y\\logs\\debug-core.log"}
+{"time":"2025-05-18T14:07:14.1268389+03:00","level":"INFO","msg":"created new stream","id":"3h8bgr3y"}
+{"time":"2025-05-18T14:07:14.1268389+03:00","level":"INFO","msg":"stream: started","id":"3h8bgr3y"}
+{"time":"2025-05-18T14:07:14.1268389+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"3h8bgr3y"}
+{"time":"2025-05-18T14:07:14.1273496+03:00","level":"INFO","msg":"sender: started","stream_id":"3h8bgr3y"}
+{"time":"2025-05-18T14:07:14.1274808+03:00","level":"INFO","msg":"handler: started","stream_id":"3h8bgr3y"}
+{"time":"2025-05-18T14:07:14.5362299+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-05-18T14:27:51.4879649+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-05-18T14:27:51.4942189+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-05-18T14:27:52.3006001+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-05-18T14:27:52.4972356+03:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 11-12, summary, console lines 12-12","runtime_seconds":0.1955989}],"total_operations":1}}
+{"time":"2025-05-18T14:27:53.9450212+03:00","level":"INFO","msg":"stream: closing","id":"3h8bgr3y"}
+{"time":"2025-05-18T14:27:53.9450212+03:00","level":"INFO","msg":"handler: closed","stream_id":"3h8bgr3y"}
+{"time":"2025-05-18T14:27:53.9455298+03:00","level":"INFO","msg":"sender: closed","stream_id":"3h8bgr3y"}
+{"time":"2025-05-18T14:27:53.9450212+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"3h8bgr3y"}
+{"time":"2025-05-18T14:27:53.9455298+03:00","level":"INFO","msg":"stream: closed","id":"3h8bgr3y"}

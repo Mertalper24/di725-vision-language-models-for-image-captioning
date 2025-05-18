@@ -1,0 +1,27 @@
+Loading dataset...
+Initializing model with QLoRA...
+`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+`config.hidden_activation` if you want to override this behaviour.
+See https://github.com/huggingface/transformers/pull/29402 for more details.
+Loading checkpoint shards: 100%|███████████████████████████████████| 3/3 [00:08<00:00,  2.68s/it]
+trainable params: 11,298,816 || all params: 2,934,765,296 || trainable%: 0.3850
+C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Starting training...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+100%|████████████████████████████████████████████████████████████| 24/24 [19:20<00:00, 48.36s/it]
+{'loss': 18.0904, 'grad_norm': 5.376882553100586, 'learning_rate': 2e-05, 'epoch': 0.17}
+{'loss': 17.1191, 'grad_norm': 6.57493257522583, 'learning_rate': 1.8181818181818182e-05, 'epoch': 0.33}
+{'loss': 17.4818, 'grad_norm': 5.317567825317383, 'learning_rate': 1.6363636363636366e-05, 'epoch': 0.5}
+{'loss': 15.6389, 'grad_norm': 4.896299839019775, 'learning_rate': 1.4545454545454546e-05, 'epoch': 0.67}
+{'loss': 16.5276, 'grad_norm': 5.313823223114014, 'learning_rate': 1.2727272727272728e-05, 'epoch': 0.83}
+{'loss': 18.0533, 'grad_norm': 7.87788200378418, 'learning_rate': 1.0909090909090909e-05, 'epoch': 1.0}
+{'loss': 15.9066, 'grad_norm': 5.207828998565674, 'learning_rate': 9.090909090909091e-06, 'epoch': 1.17}
+{'loss': 19.0343, 'grad_norm': 15.970490455627441, 'learning_rate': 7.272727272727273e-06, 'epoch': 1.33}
+{'loss': 15.5402, 'grad_norm': 5.874504566192627, 'learning_rate': 5.4545454545454545e-06, 'epoch': 1.5}
+{'loss': 16.5537, 'grad_norm': 6.118309020996094, 'learning_rate': 3.6363636363636366e-06, 'epoch': 1.67}
+{'loss': 16.2664, 'grad_norm': 5.778387069702148, 'learning_rate': 1.8181818181818183e-06, 'epoch': 1.83}
+{'loss': 16.8366, 'grad_norm': 31.764310836791992, 'learning_rate': 0.0, 'epoch': 2.0}
+{'train_runtime': 1160.6647, 'train_samples_per_second': 0.164, 'train_steps_per_second': 0.021, 'train_loss': 16.92073130607605, 'epoch': 2.0}
+Saving model...

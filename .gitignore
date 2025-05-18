@@ -1,5 +1,6 @@
 models
 finetuned_paligemma_riscm_small
+finetuned_architechtural_changes
 models/paligemma-3b-pt-224
 __pycache__
 *.jpg

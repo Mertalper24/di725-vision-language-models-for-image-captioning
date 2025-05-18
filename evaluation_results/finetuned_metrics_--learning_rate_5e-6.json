@@ -1,0 +1,35 @@
+{
+    "model_name": "finetuned_20250518_050121",
+    "metrics": {
+        "bleu": 0.020613586170582877,
+        "meteor": 0.14170369050447457,
+        "cider": 0.37384544687733506
+    },
+    "examples": [
+        {
+            "image_path": "example_1.jpg",
+            "generated_caption": "intersection",
+            "reference_caption": "An intersection with sparse traffic is between some clearings ."
+        },
+        {
+            "image_path": "example_2.jpg",
+            "generated_caption": "image may contain nature outdoors mountain land and soil",
+            "reference_caption": "a marbled pattern can be seen on the orange and khaki desert ."
+        },
+        {
+            "image_path": "example_3.jpg",
+            "generated_caption": "aerial view of the house",
+            "reference_caption": "The white palace has a courtyard is surrounded by some clearings ."
+        },
+        {
+            "image_path": "example_4.jpg",
+            "generated_caption": "beach",
+            "reference_caption": "the sea beat the white spray on the beach ."
+        },
+        {
+            "image_path": "example_5.jpg",
+            "generated_caption": "what is the name of this place",
+            "reference_caption": "There are small creeks in the middle of this wetland ."
+        }
+    ]
+}

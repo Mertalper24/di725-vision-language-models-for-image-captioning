@@ -1,0 +1,35 @@
+{
+    "model_name": "finetuned_20250518_125557",
+    "metrics": {
+        "bleu": 0.014322883376828566,
+        "meteor": 0.09708639854338282,
+        "cider": 0.364455674693572
+    },
+    "examples": [
+        {
+            "image_path": "example_1.jpg",
+            "generated_caption": ".\naerial view of the airport",
+            "reference_caption": "An airport with some staggered runways, Buildings and an open area next to the sea and these runways put a triangular shape while some buildings arranged neatly beside ."
+        },
+        {
+            "image_path": "example_2.jpg",
+            "generated_caption": ".\nwhat are these green squares on google earth",
+            "reference_caption": "many pieces of farmlands are together ."
+        },
+        {
+            "image_path": "example_3.jpg",
+            "generated_caption": ".\nsatellite image of icebergs in the southern ocean off the west coast of antarctica",
+            "reference_caption": "Some ice hummocks and some small pieces of ice sea float in the deep blue sea ."
+        },
+        {
+            "image_path": "example_4.jpg",
+            "generated_caption": ".\nsatellite view of the city",
+            "reference_caption": "The dark green river is flanked by some fields, Forests and residential areas ."
+        },
+        {
+            "image_path": "example_5.jpg",
+            "generated_caption": ".\ntank farm",
+            "reference_caption": "There are three larger storage tanks and more than a dozen smaller storage tanks ."
+        }
+    ]
+}

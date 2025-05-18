@@ -1,0 +1,103 @@
+Loading dataset...
+Initializing model with QLoRA...
+`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+`config.hidden_activation` if you want to override this behaviour.
+See https://github.com/huggingface/transformers/pull/29402 for more details.
+Loading checkpoint shards: 100%|██████████████████████████████████| 3/3 [00:09<00:00,  3.28s/it]
+trainable params: 11,298,816 || all params: 2,934,765,296 || trainable%: 0.3850
+C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\training_args.py:1575: FutureWarning: `evaluation_strategy` is deprecated and will be removed in version 4.46 of 🤗 Transformers. Use `eval_strategy` instead
+  warnings.warn(
+Starting training...
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  0%|                                                                    | 0/24 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 161, in <module>
+    main()
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 151, in main
+    trainer.train()
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 2164, in train
+    return inner_training_loop(
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 2524, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 3654, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 3708, in compute_loss
+    outputs = model(**inputs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\accelerate\utils\operations.py", line 818, in forward
+    return model_forward(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\accelerate\utils\operations.py", line 806, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\amp\autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\peft\peft_model.py", line 1757, in forward
+    return self.base_model(
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\peft\tuners\tuners_utils.py", line 193, in forward
+    return self.model.forward(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\models\paligemma\modeling_paligemma.py", line 564, in forward
+    loss = loss_fct(flat_logits, flat_labels)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\loss.py", line 1179, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\functional.py", line 3053, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Traceback (most recent call last):
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 161, in <module>
+    main()
+  File "C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\train_with_wandb.py", line 151, in main
+    trainer.train()
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 2164, in train
+    return inner_training_loop(
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 2524, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 3654, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\trainer.py", line 3708, in compute_loss
+    outputs = model(**inputs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\accelerate\utils\operations.py", line 818, in forward
+    return model_forward(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\accelerate\utils\operations.py", line 806, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\amp\autocast_mode.py", line 16, in decorate_autocast
+    return func(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\peft\peft_model.py", line 1757, in forward
+    return self.base_model(
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\peft\tuners\tuners_utils.py", line 193, in forward
+    return self.model.forward(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\transformers\models\paligemma\modeling_paligemma.py", line 564, in forward
+    loss = loss_fct(flat_logits, flat_labels)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\modules\loss.py", line 1179, in forward
+    return F.cross_entropy(input, target, weight=self.weight,
+  File "C:\Users\Mert\AppData\Local\Programs\Python\Python39\lib\site-packages\torch\nn\functional.py", line 3053, in cross_entropy
+    return torch._C._nn.cross_entropy_loss(input, target, weight, _Reduction.get_enum(reduction), ignore_index, label_smoothing)
+RuntimeError: CUDA error: out of memory
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
