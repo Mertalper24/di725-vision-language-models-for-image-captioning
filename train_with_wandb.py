@@ -11,8 +11,21 @@ def collate_fn(examples, processor):
     """
     Custom collate function for the dataset
     """
+    import random
+    
     texts = ["<image> <bos> describe this image." for example in examples]
-    labels = [example['caption'] for example in examples]
+    
+    # Handle multiple captions - randomly select one from caption_1 to caption_5
+    labels = []
+    for example in examples:
+        caption_keys = ['caption_1', 'caption_2', 'caption_3', 'caption_4', 'caption_5']
+        available_captions = [example[key] for key in caption_keys if example[key] is not None and example[key].strip()]
+        if available_captions:
+            selected_caption = random.choice(available_captions)
+        else:
+            selected_caption = "No caption available"  # Fallback
+        labels.append(selected_caption)
+    
     images = [example["image"].convert("RGB") for example in examples]
     
     tokens = processor(
@@ -49,27 +62,27 @@ def compute_metrics(eval_preds, processor):
 def main():
     # Initialize wandb
     wandb.init(project="paligemma-image-captioning", config={
-        "learning_rate": 2e-5,  
-        "batch_size": 2,        
-        "num_epochs": 2,        
-        "warmup_steps": 2,      
-        "weight_decay": 1e-6,   
-        "lora_rank": 8,
-        "lora_alpha": 16,
-        "lora_dropout": 0.1,
-        "gradient_accumulation_steps": 4  
+        "learning_rate": 5e-5,          # Higher for LoRA
+        "batch_size": 4,                # Increased for better stability  
+        "num_epochs": 3,                # More epochs for larger dataset
+        "warmup_steps": 500,            # ~1% of total steps
+        "weight_decay": 1e-4,           # Slightly higher regularization
+        "lora_rank": 16,                # Higher rank for better capacity
+        "lora_alpha": 32,               # 2x rank (standard practice)
+        "lora_dropout": 0.1,            # Keep same
+        "gradient_accumulation_steps": 8  # Effective batch size = 32
     })
     
-    # Set offline mode
-    os.environ["HF_HUB_OFFLINE"] = "1"
+    # COMMENT OUT this line to enable downloading
+    # os.environ["HF_HUB_OFFLINE"] = "1"
     
     # Load model and processor
-    model_path = "models/paligemma-3b-pt-224"
+    model_path = "google/paligemma-3b-pt-224"
     processor = AutoProcessor.from_pretrained(model_path)
     
-    # Load dataset
+    # Load dataset - CHANGE THIS LINE
     print("Loading dataset...")
-    ds = load_dataset('caglarmert/small_riscm')
+    ds = load_dataset('caglarmert/full_riscm')  # Changed from 'caglarmert/small_riscm'
     
     # Split dataset
     split_ds = ds["train"].train_test_split(test_size=0.05)
