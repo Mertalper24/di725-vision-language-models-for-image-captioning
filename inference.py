@@ -8,8 +8,8 @@ def main():
     os.environ["HF_HUB_OFFLINE"] = "1"
     
     # Load model and processor from local paths
-    pretrained_model_path = "models/paligemma-3b-pt-224"
-    finetuned_model_path = "finetuned_paligemma_riscm_small"
+    pretrained_model_path = "google/paligemma-3b-pt-224"
+    finetuned_model_path = "/home/ai/di725-vision-language-models-for-image-captioning/finetuned_paligemma_riscm_4as6ggc3"  # Updated path to the new model
     
     print("Loading processor...")
     processor = AutoProcessor.from_pretrained(pretrained_model_path)
@@ -52,10 +52,14 @@ def main():
         
         # Remove the prompt from the output, preserving the complete caption
         caption = caption.replace(prompt, "").strip()
+        # Remove any remaining "Please provide a detailed description of this image" if it exists
+        caption = caption.replace("Please provide a detailed description of this image", "").strip()
+        # Remove any leading/trailing newlines
+        caption = caption.strip()
         return caption
     
     # Test with an example image
-    test_image_path = "test-image2.jpeg"
+    test_image_path = "/home/ai/1.1/otopark.png"
     print(f"\nProcessing image: {test_image_path}")
     caption = generate_caption(test_image_path)
     print(f"\nFinal generated caption: {caption}")
