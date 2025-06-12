@@ -165,7 +165,7 @@ def main():
     os.environ["HF_HUB_OFFLINE"] = "1"
     
     # Load model and processor
-    model_path = "models/paligemma-3b-pt-224"
+    model_path = "google/paligemma-3b-pt-224"
     
     print("Loading processor...")
     processor = AutoProcessor.from_pretrained(model_path)

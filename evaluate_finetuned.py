@@ -13,6 +13,7 @@ from datetime import datetime
 from datasets import load_dataset
 import argparse
 import nltk
+import wandb
 
 # Download required NLTK data
 nltk.download('punkt')
@@ -68,8 +69,11 @@ def evaluate_model(model_path, processor, model, run_id):
     
     # Load dataset
     print("Loading dataset...")
-    ds = load_dataset('caglarmert/small_riscm')
+    ds = load_dataset('caglarmert/full_riscm')
     test_ds = ds["train"].train_test_split(test_size=0.05)["test"]
+    
+    # Select the first 200 examples for evaluation
+    test_ds = test_ds.select(range(200))  # Use only the first 200 examples
     
     metrics = {
         'bleu': [],
@@ -112,8 +116,8 @@ def evaluate_model(model_path, processor, model, run_id):
         # Remove any leading/trailing newlines
         generated_caption = generated_caption.strip()
         
-        # Get reference caption
-        reference_caption = example['caption']
+        # Get reference caption (use the appropriate key)
+        reference_caption = example['caption_1']  # Use the first caption as the reference
         
         # Calculate metrics
         # BLEU
@@ -179,6 +183,63 @@ def get_latest_model_path():
     except FileNotFoundError:
         return "finetuned_paligemma_riscm_small"  # Default path
 
+def log_metrics_to_wandb(json_file_path, baseline_metrics=None, run_name=None):
+    """
+    Log metrics from a JSON file to WANDB
+    """
+    # Read the JSON file
+    with open(json_file_path, 'r') as f:
+        results = json.load(f)
+    
+    # Initialize wandb
+    if run_name is None:
+        run_name = "Fine-tuned Full Dataset"  # Default run name for the new metrics
+    
+    # Determine tags
+    tags = ['fine-tuned', 'full-dataset']
+    
+    wandb.init(
+        project="paligemma-image-captioning",
+        name=run_name,
+        tags=tags,
+        config={
+            "model_name": results['model_name'],
+            "evaluation_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+    )
+    
+    # Log metrics
+    wandb.log(results['metrics'])
+    
+    # If we have baseline metrics, log improvements
+    if baseline_metrics:
+        improvements = calculate_improvement(results['metrics'], baseline_metrics)
+        wandb.log(improvements)
+        
+        # Create a comparison table
+        comparison_table = wandb.Table(columns=["Metric", "Baseline", "Fine-tuned", "Improvement"])
+        for metric in baseline_metrics:
+            comparison_table.add_data(
+                metric.upper(),
+                f"{baseline_metrics[metric]:.4f}",
+                f"{results['metrics'][metric]:.4f}",
+                f"{improvements[f'{metric}_improvement']:+.2f}%"
+            )
+        wandb.log({"comparison_with_baseline": comparison_table})
+    
+    # Log examples as a table
+    examples_table = wandb.Table(columns=["Image", "Generated Caption", "Reference Caption"])
+    for example in results['examples']:
+        examples_table.add_data(
+            example['image_path'],
+            example['generated_caption'],
+            example['reference_caption']
+        )
+    wandb.log({"examples": examples_table})
+    
+    # Close wandb
+    wandb.finish()
+
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Evaluate fine-tuned model')
@@ -207,7 +268,7 @@ def main():
         return
     
     # Load processor from pretrained model
-    pretrained_model_path = "models/paligemma-3b-pt-224"
+    pretrained_model_path = "google/paligemma-3b-pt-224"
     print(f"Loading processor from pretrained model at {pretrained_model_path}...")
     processor = AutoProcessor.from_pretrained(pretrained_model_path)
     
@@ -247,6 +308,12 @@ def main():
         print(f"Fine-tuned: {finetuned_ex['generated_caption']}")
         print("Reference caption:")
         print(f"  {pretrained_ex['reference_caption']}")
+
+    # Log only the new full dataset metrics
+    new_metrics_path = f'evaluation_results/finetuned_metrics_{run_id}.json'
+    if os.path.exists(new_metrics_path):
+        print("Logging new full dataset metrics to WANDB...")
+        log_metrics_to_wandb(new_metrics_path, baseline_metrics=pretrained_metrics, run_name="Fine-tuned Full Dataset")
 
 if __name__ == "__main__":
     main() 

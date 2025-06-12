@@ -62,15 +62,15 @@ def compute_metrics(eval_preds, processor):
 def main():
     # Initialize wandb
     wandb.init(project="paligemma-image-captioning", config={
-        "learning_rate": 5e-5,          # Higher for LoRA
-        "batch_size": 4,                # Increased for better stability  
-        "num_epochs": 3,                # More epochs for larger dataset
+        "learning_rate": 2e-5,          # Higher for LoRA
+        "batch_size": 8,                # Increased for better stability  
+        "num_epochs": 2,                # More epochs for larger dataset
         "warmup_steps": 500,            # ~1% of total steps
         "weight_decay": 1e-4,           # Slightly higher regularization
         "lora_rank": 16,                # Higher rank for better capacity
         "lora_alpha": 32,               # 2x rank (standard practice)
         "lora_dropout": 0.1,            # Keep same
-        "gradient_accumulation_steps": 8  # Effective batch size = 32
+        "gradient_accumulation_steps": 16  # Increased from 8
     })
     
     # COMMENT OUT this line to enable downloading
@@ -80,14 +80,20 @@ def main():
     model_path = "google/paligemma-3b-pt-224"
     processor = AutoProcessor.from_pretrained(model_path)
     
-    # Load dataset - CHANGE THIS LINE
+    # Load dataset
     print("Loading dataset...")
     ds = load_dataset('caglarmert/full_riscm')  # Changed from 'caglarmert/small_riscm'
     
+    # Check the number of examples in the dataset
+    print(f"Number of examples in the dataset: {len(ds['train'])}")
+
     # Split dataset
     split_ds = ds["train"].train_test_split(test_size=0.05)
     train_ds = split_ds["train"]
     test_ds = split_ds["test"]
+
+    # Check the size of the test dataset
+    print(f"Number of examples in the test dataset: {len(test_ds)}")
     
     # Setup device
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -122,11 +128,16 @@ def main():
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
     
-    # Training arguments
+
+    # Set environment variable for memory management
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+
+    # Reduce evaluation batch size
     training_args = TrainingArguments(
         output_dir=f"finetuned_paligemma_riscm_{wandb.run.id}",
         learning_rate=wandb.config.learning_rate,
         per_device_train_batch_size=wandb.config.batch_size,
+        per_device_eval_batch_size=1,
         gradient_accumulation_steps=wandb.config.gradient_accumulation_steps,
         num_train_epochs=wandb.config.num_epochs,
         weight_decay=wandb.config.weight_decay,
@@ -134,14 +145,14 @@ def main():
         logging_steps=2,
         optim="adamw_8bit",
         save_strategy="steps",
-        save_steps=100,
+        save_steps=1000,
         save_total_limit=1,
         bf16=True,
         dataloader_pin_memory=False,
         report_to=["wandb"],
         remove_unused_columns=False,
         evaluation_strategy="steps",
-        eval_steps=100,
+        eval_steps=1000,
         load_best_model_at_end=True
     )
     
@@ -167,4 +178,5 @@ def main():
     wandb.finish()
 
 if __name__ == "__main__":
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
     main() 
