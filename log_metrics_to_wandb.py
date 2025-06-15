@@ -1,6 +1,6 @@
 import json
 import os
-import wandb
+import log_metrics_manually
 from datetime import datetime
 
 def parse_run_name(filename):
@@ -79,7 +79,7 @@ def log_metrics_to_wandb(json_file_path, baseline_metrics=None, run_name=None):
             elif param.startswith('gradient_accumulation_steps'):
                 tags.append(f"ga_{param.split('_')[-1]}")
     
-    wandb.init(
+    log_metrics_manually.init(
         project="paligemma-image-captioning",
         name=run_name,
         tags=tags,
@@ -90,12 +90,12 @@ def log_metrics_to_wandb(json_file_path, baseline_metrics=None, run_name=None):
     )
     
     # Log metrics
-    wandb.log(results['metrics'])
+    log_metrics_manually.log(results['metrics'])
     
     # If this is a fine-tuned model and we have baseline metrics, log improvements
     if baseline_metrics and results['model_name'] != 'pretrained':
         improvements = calculate_improvement(results['metrics'], baseline_metrics)
-        wandb.log(improvements)
+        log_metrics_manually.log(improvements)
         
         # Create a comparison table
         comparison_table = wandb.Table(columns=["Metric", "Baseline", "Fine-tuned", "Improvement"])
@@ -106,20 +106,20 @@ def log_metrics_to_wandb(json_file_path, baseline_metrics=None, run_name=None):
                 f"{results['metrics'][metric]:.4f}",
                 f"{improvements[f'{metric}_improvement']:+.2f}%"
             )
-        wandb.log({"comparison_with_baseline": comparison_table})
+        log_metrics_manually.log({"comparison_with_baseline": comparison_table})
     
     # Log examples as a table
-    examples_table = wandb.Table(columns=["Image", "Generated Caption", "Reference Caption"])
+    examples_table = log_metrics_manually.Table(columns=["Image", "Generated Caption", "Reference Caption"])
     for example in results['examples']:
         examples_table.add_data(
             example['image_path'],
             example['generated_caption'],
             example['reference_caption']
         )
-    wandb.log({"examples": examples_table})
+    log_metrics_manually.log({"examples": examples_table})
     
     # Close wandb
-    wandb.finish()
+    log_metrics_manually.finish()
 
 def main():
     # Create evaluation_results directory if it doesn't exist

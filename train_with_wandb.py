@@ -62,15 +62,15 @@ def compute_metrics(eval_preds, processor):
 def main():
     # Initialize wandb
     wandb.init(project="paligemma-image-captioning", config={
-        "learning_rate": 2e-5,          # Higher for LoRA
-        "batch_size": 8,                # Increased for better stability  
-        "num_epochs": 2,                # More epochs for larger dataset
-        "warmup_steps": 500,            # ~1% of total steps
-        "weight_decay": 1e-4,           # Slightly higher regularization
-        "lora_rank": 16,                # Higher rank for better capacity
-        "lora_alpha": 32,               # 2x rank (standard practice)
-        "lora_dropout": 0.1,            # Keep same
-        "gradient_accumulation_steps": 16  # Increased from 8
+        "learning_rate": 2e-5,
+        "batch_size": 12,
+        "num_epochs": 3,
+        "warmup_steps": 500,
+        "weight_decay": 1e-4,
+        "lora_rank": 16,
+        "lora_alpha": 32,
+        "lora_dropout": 0.1,
+        "gradient_accumulation_steps": 16
     })
     
     # COMMENT OUT this line to enable downloading
@@ -82,7 +82,7 @@ def main():
     
     # Load dataset
     print("Loading dataset...")
-    ds = load_dataset('caglarmert/full_riscm')  # Changed from 'caglarmert/small_riscm'
+    ds = load_dataset('caglarmert/full_riscm')
     
     # Check the number of examples in the dataset
     print(f"Number of examples in the dataset: {len(ds['train'])}")
@@ -94,9 +94,6 @@ def main():
 
     # Check the size of the test dataset
     print(f"Number of examples in the test dataset: {len(test_ds)}")
-    
-    # Setup device
-    device = "cuda" if torch.cuda.is_available() else "cpu"
     
     # Initialize model with QLoRA
     print("Initializing model with QLoRA...")
@@ -127,7 +124,6 @@ def main():
     
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
-    
 
     # Set environment variable for memory management
     os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"

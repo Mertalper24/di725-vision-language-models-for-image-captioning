@@ -9,7 +9,7 @@ def main():
     
     # Load model and processor from local paths
     pretrained_model_path = "google/paligemma-3b-pt-224"
-    finetuned_model_path = "/home/ai/di725-vision-language-models-for-image-captioning/finetuned_paligemma_riscm_4as6ggc3"  # Updated path to the new model
+    finetuned_model_path = r"C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\finetuned_paligemma_full_dataset"
     
     print("Loading processor...")
     processor = AutoProcessor.from_pretrained(pretrained_model_path)
@@ -39,13 +39,13 @@ def main():
         print("Generating caption...")
         output = model.generate(
             **inputs,
-            max_new_tokens=100,  # Increased token limit
+            max_new_tokens=100,
             do_sample=True,
-            temperature=0.8,     # Slightly increased temperature
-            top_p=0.95,         # Increased top_p
-            num_beams=5,        # Added beam search
-            length_penalty=1.0,  # Added length penalty
-            repetition_penalty=1.2  # Added repetition penalty
+            temperature=0.8,
+            top_p=0.95,
+            num_beams=5,
+            length_penalty=1.0,
+            repetition_penalty=1.2
         )
         caption = processor.decode(output[0], skip_special_tokens=True)
         print(f"Raw output: {caption}")
@@ -59,7 +59,7 @@ def main():
         return caption
     
     # Test with an example image
-    test_image_path = "/home/ai/1.1/otopark.png"
+    test_image_path = r"C:\Users\Mert\Desktop\di725-vision-language-models-for-image-captioning\test_images\barcelona.jpg"  # Update this path to your test image
     print(f"\nProcessing image: {test_image_path}")
     caption = generate_caption(test_image_path)
     print(f"\nFinal generated caption: {caption}")

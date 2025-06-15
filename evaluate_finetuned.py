@@ -72,8 +72,6 @@ def evaluate_model(model_path, processor, model, run_id):
     ds = load_dataset('caglarmert/full_riscm')
     test_ds = ds["train"].train_test_split(test_size=0.05)["test"]
     
-    # Select the first 200 examples for evaluation
-    test_ds = test_ds.select(range(200))  # Use only the first 200 examples
     
     metrics = {
         'bleu': [],
